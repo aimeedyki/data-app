@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
 import { pick } from 'lodash-es';
+import {
+  addGame,
+  } from 'store/games/actions';
 import GameList from './GameList';
 
 function mapStateToProps(state) {
@@ -8,4 +11,8 @@ function mapStateToProps(state) {
   ]);
 }
 
-export default connect(mapStateToProps)(GameList);
+const mapDispatchToProps = {
+  addGame,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameList);

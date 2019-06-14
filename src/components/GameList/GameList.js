@@ -3,9 +3,11 @@ import {
   Collection,
   CollectionItem,
 } from 'react-materialize';
+import AddGameForm from './AddGameForm';
 
 const GameList = ({
   games,
+  addGame,
 }) => {
   return <div>
     <Collection header="Video Games">
@@ -13,6 +15,7 @@ const GameList = ({
         <CollectionItem key={game}>{game}</CollectionItem>
       )) }
     </Collection>
+    <AddGameForm onAddGame={addGame} />
   </div>;
 };
 
