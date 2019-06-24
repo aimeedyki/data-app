@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import {
   ADD_GAME,
 } from './actions';
+import { logOut } from 'store/login/actions';
 
 const initialData = [
   'Fallout 3',
@@ -19,4 +20,5 @@ export function games(state = initialData, action) {
 
 export default combineReducers({
   games,
+  logOut
 });

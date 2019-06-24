@@ -1,16 +1,21 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Col, Row } from 'react-materialize';
+import { Row } from 'react-materialize';
+import { PersistGate } from 'redux-persist/integration/react';
+import Auth from 'components/Auth';
 import GameList from 'components/GameList';
-import store from 'store';
+import { store, persistor } from 'store';
+import 'App.css'
 
 const App = () => (
   <Provider store={store}>
-    <Row>
-      <Col s={12} m={10} l={8} offset="m1 l2">
-        <GameList />
-      </Col>
-    </Row>
+    <PersistGate loading={null} persistor={persistor}>
+      <Row className="grey darken-4 app-layout">
+        <Auth>
+          <GameList />
+        </Auth>
+      </Row>
+    </PersistGate>
   </Provider>
 );
 

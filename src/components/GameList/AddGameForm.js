@@ -5,6 +5,7 @@ import {
   Input,
   Row,
 } from 'react-materialize';
+import './AddGameForm.css';
 
 const AddGameForm = ({ onAddGame }) => {
   const [newGameTitle, setNewGameTitle] = useState('');
@@ -22,13 +23,14 @@ const AddGameForm = ({ onAddGame }) => {
   return <form onSubmit={handleAddGame}>
     <Row>
       <Input
+        className="input--style"
         label="New Game Title"
         value={newGameTitle}
         onChange={handleChangeText}
-        s={12} m={10} l={11}
+        s={12} m={10} l={8}
       />
-      <Col s={12} m={2} l={1}>
-        <Button>Add</Button>
+      <Col s={12} m={2} l={1} className="button--style">
+        <Button className="black white-text">Add</Button>
       </Col>
     </Row>
   </form>;
