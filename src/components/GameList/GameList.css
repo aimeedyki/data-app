@@ -5,4 +5,15 @@
 
 .game-content {
   padding-left: 5% !important;
+  padding-top: 2% !important;
+}
+
+.preloader-wrapper {
+  position: fixed !important;
+  left: 45% !important;
+  top: 45% !important;
+}
+
+.spinner-blue, .spinner-blue-only {
+  border-color: #00bcd4 !important;
 }
