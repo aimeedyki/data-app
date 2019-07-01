@@ -12,6 +12,7 @@ import './GameList.css'
 
 const GameList = ({
   addGame,
+  addQueuedGames,
   error,
   games,
   loadGames,
@@ -20,8 +21,9 @@ const GameList = ({
 }) => {
 
   useEffect(() => {
-    loadGames();
-  }, [loadGames]);
+    loadGames()
+     .then(addQueuedGames);
+  }, [addQueuedGames, loadGames]);
 
   return <Row>
     <Button className="black cyan-text col offset-l11" onClick={logOut}>

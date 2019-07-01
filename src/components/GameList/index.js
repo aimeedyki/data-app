@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { pick } from 'lodash-es';
 import {
   addGame,
+  addQueuedGames,
   loadGames
   } from 'store/games/actions';
 import { logOut } from 'store/login/actions';
@@ -17,6 +18,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   addGame,
+  addQueuedGames,
   loadGames,
   logOut
 };
