@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { Row } from 'react-materialize';
+import { PersistGate } from 'redux-persist/integration/react';
+import Auth from 'components/Auth';
+import GameList from 'components/GameList';
+import { store, persistor } from 'store';
+import 'App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <Row className="grey darken-4 app-layout">
+        <Auth>
+          <GameList />
+        </Auth>
+      </Row>
+    </PersistGate>
+  </Provider>
+);
 
 export default App;

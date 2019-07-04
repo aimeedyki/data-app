@@ -1,0 +1,45 @@
+.collection--style {
+  color: #00414A;
+  padding: 0 !important;
+  margin-top: 10% !important;
+}
+
+.game-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5% !important;
+  padding-top: 2% !important;
+}
+
+.game-page {
+  height: 100%;
+}
+
+.game-color {
+  background: #00414A !important;
+}
+
+.list-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 80%;
+  overflow: scroll;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5%;
+}
+
+
+.preloader-wrapper {
+  position: fixed !important;
+  left: 45% !important;
+  top: 45% !important;
+}
+
+.spinner-blue, .spinner-blue-only {
+  border-color: #00bcd4 !important;
+}
