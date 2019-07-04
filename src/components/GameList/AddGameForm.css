@@ -1,11 +1,16 @@
 .button--style {
-  margin-top: 3% !important;
+  margin-top: 7% !important;
+  padding-left: 0 !important;
 }
 
 .input--style {
   border-bottom: 1px solid black !important;
 }
 
-.input-field label {
-  color: black !important;
+.add-game .input-field label {
+  color: #00414A !important;
+}
+
+.add-button {
+  color: #00414A;
 }
