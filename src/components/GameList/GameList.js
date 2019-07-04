@@ -22,26 +22,30 @@ const GameList = ({
 
   useEffect(() => {
     loadGames()
-     .then(addQueuedGames);
+      .then(addQueuedGames);
   }, [addQueuedGames, loadGames]);
 
-  return <Row>
-    <Button className="black cyan-text col offset-l11" onClick={logOut}>
-      Log Out
-    </Button>
-    <LoadingIndicator loading={loading} error={error}>
-      <Col s={12} m={10} l={6} offset="m1 l3" className="cyan game-content">
-        <Collection className="col l6 offset-l2 collection--style" header="Video Games">
-          {games.map((game) => (
-            <CollectionItem className="grey darken-4 white-text" key={game.id}>
-              {game.attributes.title}
-            </CollectionItem>
-          ))}
-        </Collection>
-        <Button className="black white-text" onClick={()=>loadGames()}>Reload</Button>
-        <AddGameForm onAddGame={addGame} />
-      </Col>
-    </LoadingIndicator>
+  return <Row className="game-page">
+    <div className="nav-bar">
+      <Button className="black cyan-text " onClick={logOut}>
+        Log Out
+      </Button>
+    </div>
+    <div className="list-section">
+      <LoadingIndicator loading={loading} error={error}>
+        <Col className="cyan game-content">
+          <Collection className="collection--style" header="Video Games">
+            {games.map((game) => (
+              <CollectionItem className="game-color white-text" key={game.id}>
+                {game.attributes.title}
+              </CollectionItem>
+            ))}
+          </Collection>
+          <Button className="game-color white-text" onClick={() => loadGames()}>Reload</Button>
+          <AddGameForm onAddGame={addGame} />
+        </Col>
+      </LoadingIndicator>
+    </div>
   </Row>;
 };
 

@@ -21,7 +21,7 @@ const AddGameForm = ({ onAddGame }) => {
   }
 
   return <form onSubmit={handleAddGame}>
-    <Row>
+    <Row className="add-game">
       <Input
         className="input--style"
         label="New Game Title"
@@ -30,7 +30,7 @@ const AddGameForm = ({ onAddGame }) => {
         s={12} m={10} l={8}
       />
       <Col s={12} m={2} l={1} className="button--style">
-        <Button className="black white-text">Add</Button>
+        <Button className="white add-button">Add</Button>
       </Col>
     </Row>
   </form>;

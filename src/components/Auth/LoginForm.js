@@ -7,6 +7,7 @@ import {
   Row,
 } from 'react-materialize';
 import api from 'store/api';
+import './LoginForm.css';
 
 const LoginForm = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
@@ -38,31 +39,35 @@ const LoginForm = ({ onLoginSuccess }) => {
   }
 
   return (
-    <form onSubmit={logIn}>
-      {error ? <p>{error}</p> : null}
-      <Row>
-        <Input
-          label="Email"
-          value={email}
-          onChange={handleChange(setEmail)}
-          s={12}
-        />
-      </Row>
-      <Row>
-        <Input
-          label="Password"
-          type="password"
-          value={password}
-          onChange={handleChange(setPassword)}
-          s={12}
-        />
-      </Row>
-      <Row>
-        <Col>
-          <Button>Log In</Button>
-        </Col>
-      </Row>
-    </form>
+    <div className="container login-form--style">
+      <form onSubmit={logIn}>
+        {error ? <p className="red-text text-darken-4">{error}</p> : null}
+        <Row>
+          <Input
+            className="white-text"
+            label="Email"
+            value={email}
+            onChange={handleChange(setEmail)}
+            s={12}
+          />
+        </Row>
+        <Row>
+          <Input
+            className="white-text"
+            label="Password"
+            type="password"
+            value={password}
+            onChange={handleChange(setPassword)}
+            s={12}
+          />
+        </Row>
+        <Row>
+          <Col>
+            <Button className="black white-text">Log In</Button>
+          </Col>
+        </Row>
+      </form>
+    </div>
   );
 };
 
